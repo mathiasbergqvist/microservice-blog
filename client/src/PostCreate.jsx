@@ -3,6 +3,7 @@ import axios from "axios";
 
 const PostCreate = () => {
   const [title, setTitle] = useState("");
+
   // Create post on from submit
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const PostCreate = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="form-control"
+            style={{ marginBottom: "15px" }}
           />
         </div>
         <button className="btn btn-primary">Submit</button>
