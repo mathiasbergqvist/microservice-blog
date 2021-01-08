@@ -25,7 +25,7 @@ app.post("/posts/:id/comments", async (req, res) => {
   const comments = commentsByPostId[postId] || [];
 
   // Add comment to index
-  comments.push({ id: commentId, content });
+  comments.push({ id: commentId, content, status: "pending" });
   commentsByPostId[postId] = comments;
 
   //Emit event
@@ -35,6 +35,7 @@ app.post("/posts/:id/comments", async (req, res) => {
       id: commentId,
       content,
       postId,
+      status: "pending",
     },
   });
 
