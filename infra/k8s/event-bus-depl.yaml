@@ -1,3 +1,4 @@
+# Config for creating pod
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,3 +16,17 @@ spec:
       containers:
         - name: event-bus
           image: mathiasbergqvist/event-bus:latest
+---
+# Config for cluster ip service
+apiVersion: v1
+kind: Service
+metadata:
+  name: event-bus-srv
+spec:
+  selector:
+    app: event-bus
+  ports:
+    - name: event-bus
+      protocol: TCP
+      port: 4005
+      targetPort: 4005
