@@ -12,7 +12,7 @@ spec:
         paths:
           - path: /posts/create
             backend:
-              serviceName: posts-clusterip-srv
+              serviceName: posts-cluster-ip-srv
               servicePort: 4000
           - path: /posts
             backend:

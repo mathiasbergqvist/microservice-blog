@@ -16,7 +16,7 @@ build:
         manual:
           - src: "src/**/*.js" # Sync updated js files to the pod and update it directly
             dest: .
-    - image: mathiasbergqvist/commenets
+    - image: mathiasbergqvist/comments
       context: comments
       docker:
         dockerfile: Dockerfile
